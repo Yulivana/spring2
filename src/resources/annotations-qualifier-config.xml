@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="position" class="net.proselyte.autowiring.ex4.annotations.Position">
+    </bean>
+
+    <bean class="net.proselyte.autowiring.ex4.annotations.Developer">
+        <constructor-arg name="name" value="Developer"/>
+        <constructor-arg name="experience" value="2"/>
+        <constructor-arg name="specialty" value=".Net developer"/>
+        <qualifier value="dotNetDeveloper"/>
+    </bean>
+
+    <bean id="javaDeveloper" class="net.proselyte.autowiring.ex4.annotations.Developer">
+        <constructor-arg name="name" value="Proselyte"/>
+        <constructor-arg name="experience" value="3"/>
+        <constructor-arg name="specialty" value="Java developer"/>
+    </bean>
+
+</beans>
